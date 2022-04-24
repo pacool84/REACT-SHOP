@@ -7,6 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"), //Dist es por convencion y significa distribution
     filename: "bundle.js",
   },
+  mode: "development",
   resolve: {
     extensions: [".js", ".jsx"],
   },
