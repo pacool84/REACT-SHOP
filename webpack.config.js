@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"), //Dist es por convencion y significa distribution
     filename: "bundle.js",
+    publicPath: "/", //Tiene relacion con react-router-dom
   },
   mode: "development",
   resolve: {
@@ -48,5 +49,6 @@ module.exports = {
     static: path.join(__dirname, "dist"),
     compress: true,
     port: 3005,
+    historyApiFallback: true, //Tiene relacion con react-router-dom
   },
 };
