@@ -12,6 +12,16 @@ module.exports = {
   mode: "development",
   resolve: {
     extensions: [".js", ".jsx"],
+    alias: {
+      //Ayuda a colocar alias para acceder a los diferentes paths que se tienen y asi tener codigo mas legible y amigable
+      "@components": path.resolve(__dirname, "src/components/"),
+      "@containers": path.resolve(__dirname, "src/containers/"),
+      "@pages": path.resolve(__dirname, "src/pages/"),
+      "@routes": path.resolve(__dirname, "src/routes/"),
+      "@styles": path.resolve(__dirname, "src/styles/"),
+      "@icons": path.resolve(__dirname, "src/assets/icons/"),
+      "@logos": path.resolve(__dirname, "src/assets/logos/"),
+    },
   },
   module: {
     rules: [
@@ -33,6 +43,10 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/, //Permite poder trabajar con imagenes en los formatos que se configuren
+        type: "asset",
       },
     ],
   },
