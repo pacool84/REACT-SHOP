@@ -5,12 +5,8 @@ import addToCart from "@icons/bt_add_to_cart.svg";
 const ProductItem = () => {
   const [cart, setCart] = useState("");
 
-  const handleClick = () => {
-    if (cart.length == 0) {
-      setCart("Item Added");
-    } else {
-      setCart("");
-    }
+  const handleCart = () => {
+    cart.length == 0 ? setCart("Item Added") : setCart("");
   };
 
   return (
@@ -24,10 +20,10 @@ const ProductItem = () => {
           <p>$120,00</p>
           <p>Bike</p>
         </div>
-        <figure onClick={handleClick}>
+        <figure onClick={handleCart}>
           <img src={addToCart} alt="" />
+          {cart}
         </figure>
-        {cart}
       </div>
     </div>
   );
