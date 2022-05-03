@@ -3,11 +3,16 @@ import "@styles/ProductItem.scss";
 import addToCart from "@icons/bt_add_to_cart.svg";
 
 const ProductItem = () => {
-  const [cart, setCart] = useState(true);
+  const [cart, setCart] = useState("");
+
   const handleClick = () => {
-    setCart("Item Added");
-    console.log("Se agrego al carrito");
+    if (cart.length == 0) {
+      setCart("Item Added");
+    } else {
+      setCart("");
+    }
   };
+
   return (
     <div className="ProductItem">
       <img
